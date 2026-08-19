@@ -1,63 +1,82 @@
 import styled from "styled-components";
 
-export const Styled = {
-    Button: styled.button`
-        position: fixed;
-        right: 18px;
-        bottom: 18px;
-        z-index: 9999;
+export const Wrapper = styled.button`
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    z-index: 30;
 
-        width: 48px;
-        height: 48px;
+    width: 42px;
+    height: 42px;
 
-        display: grid;
-        place-items: center;
+    display: grid;
+    place-items: center;
 
-        border-radius: 14px;
-        border: 1px solid var(--color-border);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
 
-        background: color-mix(in srgb, var(--color-primary) 26%, transparent);
-        color: var(--color-text-primary);
+    background: var(--surface-color);
+    color: var(--text-color);
 
-        box-shadow: 0 16px 44px var(--color-shadow);
+    font: inherit;
+    font-size: 1rem;
+    line-height: 1;
 
-        cursor: pointer;
+    cursor: pointer;
 
-        transition:
-            transform 140ms ease,
-            opacity 160ms ease,
-            border-color 140ms ease,
-            background-color 140ms ease;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 
-        svg {
-            width: 20px;
-            height: 20px;
-        }
+    transform: translateY(12px);
 
-        &.hide {
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(10px) scale(0.98);
-        }
+    box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
 
-        &.show {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateY(0px) scale(1);
-        }
+    transition:
+        opacity 180ms ease,
+        visibility 180ms ease,
+        transform 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease;
 
-        &:hover {
-            transform: translateY(-2px) scale(1.02);
-            border-color: var(--color-border-light);
-            background: color-mix(
-                in srgb,
-                var(--color-primary) 34%,
-                transparent
-            );
-        }
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
 
-        &:active {
-            transform: translateY(0px) scale(1);
-        }
-    `,
-};
+    &:hover {
+        background: var(--surface-soft-color);
+        transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--text-color);
+        outline-offset: 3px;
+    }
+
+    svg {
+        display: block;
+    }
+
+    @media (max-width: 900px) {
+        right: 20px;
+        bottom: 20px;
+
+        width: 40px;
+        height: 40px;
+    }
+
+    @media (max-width: 480px) {
+        right: 16px;
+        bottom: 16px;
+
+        width: 38px;
+        height: 38px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+    }
+`;

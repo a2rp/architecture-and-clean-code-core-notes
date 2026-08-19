@@ -1,23 +1,25 @@
-// components/footer/index.jsx
-import React from "react";
-import { Styled } from "./styled";
+import * as Styled from "./styled";
 
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
+
     return (
         <Styled.Wrapper>
-            <div className="left">
-                © {new Date().getFullYear()} | All rights reserved
-            </div>
+            <div className="footerContent">
+                <p className="copyright">
+                    © {currentYear} Ashish Ranjan. All rights reserved.
+                </p>
 
-            <div className="right">
-                By&nbsp;
-                <a
-                    href="https://www.ashishranjan.net"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Ashish Ranjan
-                </a>
+                <p className="credit">
+                    Developed by{" "}
+                    <a
+                        href="https://www.ashishranjan.net"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Ashish Ranjan
+                    </a>
+                </p>
             </div>
         </Styled.Wrapper>
     );

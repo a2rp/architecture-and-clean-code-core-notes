@@ -1,40 +1,76 @@
-// components/footer/styled.js
 import styled from "styled-components";
 
-export const Styled = {
-    Wrapper: styled.footer`
+export const Wrapper = styled.footer`
+    width: 100%;
+
+    margin-top: auto;
+
+    border-top: 1px solid var(--border-color);
+
+    color: var(--text-muted-color);
+
+    .footerContent {
+        width: min(100%, 1180px);
+
+        margin: 0 auto;
+        padding: 22px 54px;
+
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 12px;
-        padding: 15px;
-        border-top: 1px solid var(--color-border);
+        gap: 18px;
+    }
 
-        font-size: 12px;
-        color: var(--color-text-muted);
+    p {
+        margin: 0;
 
-        .right a {
-            color: var(--color-text-secondary);
-            font-weight: 600;
+        font-size: 0.72rem;
+        line-height: 1.6;
+    }
+
+    .credit {
+        text-align: right;
+    }
+
+    a {
+        color: var(--text-soft-color);
+
+        font-weight: 700;
+
+        text-decoration: none;
+
+        transition:
+            color 180ms ease,
+            opacity 180ms ease;
+    }
+
+    a:hover {
+        color: var(--text-color);
+    }
+
+    a:focus-visible {
+        outline: 2px solid var(--text-color);
+        outline-offset: 3px;
+        border-radius: 3px;
+    }
+
+    @media (max-width: 900px) {
+        .footerContent {
+            padding: 20px clamp(20px, 5vw, 42px);
         }
+    }
 
-        .right a:hover {
-            color: var(--color-text-primary);
-        }
-
-        a {
-            color: var(--color-text-secondary);
-            font-weight: 600;
-        }
-
-        a:hover {
-            color: var(--color-text-primary);
-        }
-
-        @media (width < 600px) {
+    @media (max-width: 600px) {
+        .footerContent {
             flex-direction: column;
             align-items: flex-start;
-            gap: 6px;
+            gap: 5px;
+
+            padding: 20px 18px;
         }
-    `,
-};
+
+        .credit {
+            text-align: left;
+        }
+    }
+`;
