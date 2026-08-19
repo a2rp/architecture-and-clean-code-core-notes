@@ -4,7 +4,7 @@ A structured and practical reference for learning **software architecture, clean
 
 ---
 
-![Architecture and Clean Code Preview](preview.png)
+![Architecture and Clean Code Preview](screenshot.png)
 
 ---
 
