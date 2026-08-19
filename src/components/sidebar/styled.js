@@ -53,9 +53,7 @@ export const Wrapper = styled.div`
 
     .brand:hover .brandIcon {
         border-color: var(--border-strong-color);
-
         background: var(--hover-color);
-
         transform: translateY(-1px);
     }
 
@@ -128,7 +126,6 @@ export const Wrapper = styled.div`
 
     .searchBox:focus-within {
         border-color: var(--border-strong-color);
-
         background: var(--surface-color);
 
         box-shadow: 0 0 0 3px var(--shadow-color);
@@ -165,7 +162,6 @@ export const Wrapper = styled.div`
 
     .searchBox input::placeholder {
         color: var(--text-muted-color);
-
         opacity: 1;
     }
 
@@ -219,7 +215,6 @@ export const Wrapper = styled.div`
         overflow-y: auto;
 
         overscroll-behavior: contain;
-
         scroll-behavior: smooth;
     }
 
@@ -272,7 +267,6 @@ export const Wrapper = styled.div`
     .menuLink:hover {
         background: var(--hover-color);
         color: var(--text-color);
-
         transform: translateX(2px);
     }
 
@@ -310,9 +304,9 @@ export const Wrapper = styled.div`
     }
 
     .noResults {
-        min-height: 220px;
+        min-height: 180px;
 
-        padding: 26px 18px;
+        padding: 24px 18px;
 
         display: flex;
         flex-direction: column;
@@ -412,7 +406,6 @@ export const Wrapper = styled.div`
 
     .themeButton:hover {
         border-color: var(--border-strong-color);
-
         background: var(--hover-color);
     }
 
@@ -465,12 +458,11 @@ export const Wrapper = styled.div`
 
     .themeSwitch.active span {
         transform: translateX(15px);
-
         background: var(--text-color);
     }
 
     .links {
-        margin-top: 12px;
+        margin-top: 10px;
 
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -478,9 +470,9 @@ export const Wrapper = styled.div`
     }
 
     .links a {
-        min-height: 34px;
+        min-height: 32px;
 
-        padding: 6px 8px;
+        padding: 5px 7px;
 
         display: flex;
         align-items: center;
@@ -491,7 +483,7 @@ export const Wrapper = styled.div`
 
         color: var(--text-muted-color);
 
-        font-size: 0.68rem;
+        font-size: 0.66rem;
 
         transition:
             background 160ms ease,
@@ -504,19 +496,18 @@ export const Wrapper = styled.div`
     }
 
     .footerText {
-        margin-top: 12px;
+        margin-top: 8px;
 
         color: var(--text-muted-color);
 
-        font-size: 0.63rem;
-        line-height: 1.5;
+        font-size: 0.61rem;
+        line-height: 1.45;
 
         text-align: center;
     }
 
     .footerText a {
         color: var(--text-soft-color);
-
         font-weight: 700;
     }
 
@@ -555,13 +546,130 @@ export const Wrapper = styled.div`
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
         .top {
-            padding-top: 24px;
+            padding: 16px 18px 14px;
+        }
+
+        .intro {
+            display: none;
+        }
+
+        .brandIcon {
+            width: 38px;
+            height: 38px;
+
+            border-radius: 10px;
+        }
+
+        .brandTitle {
+            font-size: 0.88rem;
+        }
+
+        .brandText {
+            font-size: 0.63rem;
+        }
+
+        .searchSection {
+            padding: 10px 12px;
+        }
+
+        .searchBox {
+            min-height: 40px;
+        }
+
+        .searchBox input {
+            height: 38px;
         }
 
         .navigation {
-            padding-bottom: 24px;
+            padding: 12px 10px 16px;
+        }
+
+        .menuGroup + .menuGroup {
+            margin-top: 18px;
+        }
+
+        .menuLink {
+            min-height: 39px;
+
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+
+        .bottom {
+            padding: 10px 12px 12px;
+        }
+
+        .themeButton {
+            min-height: 40px;
+        }
+
+        .links {
+            margin-top: 8px;
+        }
+
+        .footerText {
+            margin-top: 7px;
+        }
+    }
+
+    @media (max-width: 900px) and (max-height: 600px) {
+        .top {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .brandIcon {
+            width: 34px;
+            height: 34px;
+        }
+
+        .brandTitle {
+            font-size: 0.82rem;
+        }
+
+        .brandText {
+            display: none;
+        }
+
+        .searchSection {
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        .searchBox {
+            min-height: 36px;
+        }
+
+        .searchBox input {
+            height: 34px;
+        }
+
+        .navigation {
+            padding-top: 8px;
+            padding-bottom: 10px;
+        }
+
+        .menuLink {
+            min-height: 36px;
+        }
+
+        .bottom {
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        .themeButton {
+            min-height: 36px;
+        }
+
+        .links a {
+            min-height: 28px;
+        }
+
+        .footerText {
+            font-size: 0.58rem;
         }
     }
 
