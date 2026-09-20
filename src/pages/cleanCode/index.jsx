@@ -12,11 +12,11 @@ import {
     FiZap,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const CleanCode = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageCleanCode`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiCode />
@@ -1092,7 +1092,7 @@ if (
                     understanding and future change.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

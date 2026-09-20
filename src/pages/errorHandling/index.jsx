@@ -7,11 +7,11 @@ import {
     FiTerminal,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const ErrorHandlingStrategy = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageErrorHandling`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiShield />
@@ -644,7 +644,7 @@ details and try again.`}</code>
                     deliberate reason.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

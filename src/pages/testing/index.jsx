@@ -9,11 +9,11 @@ import {
     FiZap,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Testing = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageTesting`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiShield />
@@ -863,7 +863,7 @@ expect(
                     both to test and to maintain.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

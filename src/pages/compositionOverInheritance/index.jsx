@@ -7,11 +7,11 @@ import {
     FiShuffle,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const CompositionOverInheritance = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageCompositionOverInheritance`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiGitMerge />
@@ -567,7 +567,7 @@ const owner = {
                     simply as a shortcut for reuse.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

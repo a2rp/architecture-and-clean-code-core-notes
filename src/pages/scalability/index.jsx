@@ -14,11 +14,11 @@ import {
     FiZap,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Scalability = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageScalability`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiTrendingUp />
@@ -1108,7 +1108,7 @@ const notifications =
                     the tradeoffs introduced by every scaling technique.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

@@ -1,0 +1,12 @@
+.scope {
+    --module-loaded: 1;
+}
+
+:global(.appRoot) {
+        width: 100%;
+        height: 100dvh;
+        overflow: hidden;
+    
+        background: var(--background-color);
+        color: var(--text-color);
+}

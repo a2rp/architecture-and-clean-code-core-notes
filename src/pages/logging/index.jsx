@@ -11,11 +11,11 @@ import {
     FiShield,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Logging = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageLogging`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiActivity />
@@ -221,7 +221,7 @@ const Logging = () => {
                         <span className="exampleLabel">Unstructured</span>
 
                         <pre>
-                            <code>{`console.log(
+                            <code>{`writeAuditEvent(
   "User 123 created order 456 for INR 1500",
 );`}</code>
                         </pre>
@@ -846,7 +846,7 @@ middleware:
                     scattered console output.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

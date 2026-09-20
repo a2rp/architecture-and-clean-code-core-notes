@@ -9,11 +9,11 @@ import {
     FiTarget,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Architecture = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageArchitecture`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiLayers />
@@ -897,7 +897,7 @@ specific boundaries can be extracted.`}</code>
                     understandable and proportionate to the system.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

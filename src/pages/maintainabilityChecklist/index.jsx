@@ -19,7 +19,7 @@ import {
     FiZap,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const checklistSections = [
     {
@@ -193,7 +193,7 @@ const checklistSections = [
 
 const MaintainabilityChecklist = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageMaintainabilityChecklist`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiCheckCircle />
@@ -939,7 +939,7 @@ Order domain
                     as a substitute for engineering judgment.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

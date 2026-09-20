@@ -7,11 +7,11 @@ import {
     FiSliders,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Encapsulation = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageEncapsulation`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiLock />
@@ -264,7 +264,7 @@ cart.itemCount += 1;`}</code>
 const counter = createCounter();
 
 counter.increment();
-console.log(counter.getValue());`}</code>
+counter.getValue();`}</code>
                     </pre>
 
                     <div className="moduleText">
@@ -532,7 +532,7 @@ console.log(counter.getValue());`}</code>
                     details to evolve without forcing unrelated code to change.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

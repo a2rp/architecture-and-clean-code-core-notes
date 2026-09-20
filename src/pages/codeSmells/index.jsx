@@ -10,7 +10,7 @@ import {
     FiTrash2,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const smells = [
     {
@@ -67,7 +67,7 @@ const smells = [
 
 const CodeSmells = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageCodeSmells`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiSearch />
@@ -912,7 +912,7 @@ if (
                     improves the code.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

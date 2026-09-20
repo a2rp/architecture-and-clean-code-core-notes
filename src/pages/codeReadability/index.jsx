@@ -9,11 +9,11 @@ import {
     FiTarget,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const CodeReadability = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageCodeReadability`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiEye />
@@ -581,7 +581,7 @@ return retryPayment(transaction);`}</code>
                     overhead for the next developer reading the code.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

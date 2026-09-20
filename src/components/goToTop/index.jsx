@@ -1,18 +1,17 @@
 import { FiArrowUp } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const GoToTop = ({ visible = false, onClick }) => {
     return (
-        <Styled.Wrapper
-            className={visible ? "visible" : ""}
+        <button className={`${styles.scope} goToTopRoot ${visible ? "visible" : ""}`}
             type="button"
             onClick={onClick}
             aria-label="Go to top"
             title="Go to top"
         >
             <FiArrowUp />
-        </Styled.Wrapper>
+        </button>
     );
 };
 

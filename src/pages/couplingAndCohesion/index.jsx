@@ -7,11 +7,11 @@ import {
     FiTarget,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const CouplingAndCohesion = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageCouplingAndCohesion`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiLink />
@@ -563,7 +563,7 @@ const CouplingAndCohesion = () => {
                     software easier to understand, test, change, and evolve.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

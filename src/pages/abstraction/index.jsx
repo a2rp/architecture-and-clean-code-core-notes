@@ -7,11 +7,11 @@ import {
     FiShield,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Abstraction = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageAbstraction`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiLayers />
@@ -559,7 +559,7 @@ JSON.stringify(data);`}</code>
                     level of information for each responsibility.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

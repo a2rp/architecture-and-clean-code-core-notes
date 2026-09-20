@@ -8,11 +8,11 @@ import {
     FiServer,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const SeparationOfConcerns = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageSeparationOfConcerns`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiLayers />
@@ -161,7 +161,7 @@ const SeparationOfConcerns = () => {
       JSON.stringify(user),
     );
 
-    console.log(await response.json());
+    return response.json();
   };
 
   return <UserForm onSave={handleSave} />;
@@ -550,7 +550,7 @@ const SeparationOfConcerns = () => {
                     understandable and appropriately independent.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

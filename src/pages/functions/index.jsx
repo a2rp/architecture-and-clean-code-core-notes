@@ -7,11 +7,11 @@ import {
     FiZap,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Functions = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageFunctions`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiZap />
@@ -831,7 +831,7 @@ saveCartTotal(total);`}</code>
                     arbitrary line counts.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

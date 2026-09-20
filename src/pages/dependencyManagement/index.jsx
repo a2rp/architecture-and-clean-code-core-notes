@@ -9,11 +9,11 @@ import {
     FiShield,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const DependencyManagement = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageDependencyManagement`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiPackage />
@@ -107,11 +107,12 @@ const DependencyManagement = () => {
                         <article>
                             <span className="typeLabel">Direct</span>
 
-                            <h3>styled-components</h3>
+                            <h3>CSS Modules</h3>
 
                             <p>
                                 Explicitly declared because application styles
-                                use the package.
+                                use local module styles instead of adding a
+                                runtime styling package.
                             </p>
                         </article>
 
@@ -965,7 +966,7 @@ isEven(value);`}</code>
                     remove dependencies that no longer provide enough value.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

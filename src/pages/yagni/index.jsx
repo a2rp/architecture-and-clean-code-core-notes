@@ -7,11 +7,11 @@ import {
     FiZap,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Yagni = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageYagni`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiTarget />
@@ -481,7 +481,7 @@ const Yagni = () => {
                     when evidence shows that it provides real value.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

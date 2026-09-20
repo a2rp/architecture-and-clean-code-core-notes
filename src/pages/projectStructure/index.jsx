@@ -7,11 +7,11 @@ import {
     FiLayers,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const ProjectStructure = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageProjectStructure`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiFolder />
@@ -131,7 +131,7 @@ const ProjectStructure = () => {
 ├── components/
 │   ├── button/
 │   │   ├── index.jsx
-│   │   └── styled.js
+│   │   └── styles.module.css
 │   ├── modal/
 │   └── sidebar/
 │
@@ -232,7 +232,7 @@ const ProjectStructure = () => {
                             <code>{`components/
 └── userCard/
     ├── index.jsx
-    └── styled.js`}</code>
+    └── styles.module.css`}</code>
                         </pre>
                     </article>
 
@@ -251,7 +251,7 @@ const ProjectStructure = () => {
                             <code>{`pages/
 └── users/
     ├── index.jsx
-    └── styled.js`}</code>
+    └── styles.module.css`}</code>
                         </pre>
                     </article>
                 </div>
@@ -386,7 +386,7 @@ const ProjectStructure = () => {
                             <code>{`components/
 └── primaryButton/
     ├── index.jsx
-    └── styled.js`}</code>
+    └── styles.module.css`}</code>
                         </pre>
                     </article>
                 </div>
@@ -539,7 +539,7 @@ const ProjectStructure = () => {
                     remains easy to evolve as the application grows.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

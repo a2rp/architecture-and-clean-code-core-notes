@@ -7,11 +7,11 @@ import {
     FiScissors,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Refactoring = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageRefactoring`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiRefreshCw />
@@ -768,7 +768,7 @@ if (canEditContent(user)) {
                     real needs of the system.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

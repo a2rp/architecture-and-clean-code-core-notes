@@ -1,11 +1,11 @@
 import { cloneElement, useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi";
+import { NavLink, useLocation } from "react-router-dom";
+import { FiExternalLink, FiLayers, FiMenu, FiX } from "react-icons/fi";
 
 import Footer from "../footer";
 import GoToTop from "../goToTop";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const SCROLL_THRESHOLD = 300;
 
@@ -17,6 +17,10 @@ const Layout = ({ sidebar, children }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const [showGoToTop, setShowGoToTop] = useState(false);
+
+    const [isHeaderHidden, setIsHeaderHidden] = useState(false);
+
+    const previousScrollTopRef = useRef(0);
 
     const handleMobileMenuOpen = () => {
         setIsMobileMenuOpen(true);
@@ -34,6 +38,19 @@ const Layout = ({ sidebar, children }) => {
         }
 
         setShowGoToTop(contentElement.scrollTop >= SCROLL_THRESHOLD);
+
+        const currentScrollTop = contentElement.scrollTop;
+        const previousScrollTop = previousScrollTopRef.current;
+
+        if (currentScrollTop <= 0) {
+            setIsHeaderHidden(false);
+        } else if (currentScrollTop > previousScrollTop) {
+            setIsHeaderHidden(true);
+        } else if (currentScrollTop < previousScrollTop) {
+            setIsHeaderHidden(false);
+        }
+
+        previousScrollTopRef.current = currentScrollTop;
     };
 
     const handleGoToTop = () => {
@@ -63,6 +80,8 @@ const Layout = ({ sidebar, children }) => {
 
         setShowGoToTop(false);
         setIsMobileMenuOpen(false);
+        setIsHeaderHidden(false);
+        previousScrollTopRef.current = 0;
     }, [location.pathname]);
 
     useEffect(() => {
@@ -112,27 +131,54 @@ const Layout = ({ sidebar, children }) => {
         : null;
 
     return (
-        <Styled.Wrapper>
-            <aside className="desktopSidebar">{sidebarElement}</aside>
-
-            <header className="mobileHeader">
-                <div className="mobileBrand">
-                    <span className="mobileBrandTitle">Architecture</span>
-
-                    <span className="mobileBrandText">&amp; Clean Code</span>
-                </div>
-
-                <button
-                    className="mobileMenuButton"
-                    type="button"
-                    onClick={handleMobileMenuOpen}
-                    aria-label="Open navigation menu"
-                    aria-expanded={isMobileMenuOpen}
-                    aria-controls="mobile-navigation"
+        <div className={`${styles.scope} layoutRoot`}>
+            <header className={`siteHeader ${isHeaderHidden ? "hidden" : ""}`}>
+                <NavLink
+                    className="siteBrand"
+                    to="/"
+                    aria-label="Architecture and Clean Code home"
                 >
-                    <FiMenu />
-                </button>
+                    <span className="siteBrandIcon">
+                        <FiLayers />
+                    </span>
+
+                    <span className="siteBrandContent">
+                        <strong>Architecture &amp; Clean Code</strong>
+                        <span>Core Notes</span>
+                    </span>
+                </NavLink>
+
+                <div className="siteHeaderActions">
+                    <span className="siteHeaderSummary">
+                        Practical software engineering reference
+                    </span>
+
+                    <a
+                        className="siteHeaderLink"
+                        href="https://github.com/a2rp/architecture-and-clean-code-core-notes"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Open this project on GitHub"
+                        title="Open on GitHub"
+                    >
+                        <span>GitHub</span>
+                        <FiExternalLink />
+                    </a>
+
+                    <button
+                        className="mobileMenuButton"
+                        type="button"
+                        onClick={handleMobileMenuOpen}
+                        aria-label="Open navigation menu"
+                        aria-expanded={isMobileMenuOpen}
+                        aria-controls="mobile-navigation"
+                    >
+                        <FiMenu />
+                    </button>
+                </div>
             </header>
+
+            <aside className="desktopSidebar">{sidebarElement}</aside>
 
             <div
                 className={`mobileOverlay ${isMobileMenuOpen ? "visible" : ""}`}
@@ -178,7 +224,7 @@ const Layout = ({ sidebar, children }) => {
             </main>
 
             <GoToTop visible={showGoToTop} onClick={handleGoToTop} />
-        </Styled.Wrapper>
+        </div>
     );
 };
 

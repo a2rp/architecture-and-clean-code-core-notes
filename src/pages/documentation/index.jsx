@@ -9,11 +9,11 @@ import {
     FiUsers,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Documentation = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageDocumentation`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiFileText />
@@ -412,7 +412,7 @@ if (user.isActive && !user.isLegacyImport) {
 
 const App = () => {
   return (
-    <Button onClick={() => console.log("Saved")}>
+    <Button onClick={() => saveChanges()}>
       Save
     </Button>
   );
@@ -624,7 +624,7 @@ const App = () => {
                     contracts, decisions, and important context.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

@@ -7,11 +7,11 @@ import {
     FiTarget,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Naming = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageNaming`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiEdit3 />
@@ -566,7 +566,7 @@ getActiveUsers();`}</code>
                     concepts developers are actually working with.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

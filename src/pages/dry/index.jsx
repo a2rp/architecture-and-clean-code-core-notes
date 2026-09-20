@@ -7,11 +7,11 @@ import {
     FiRepeat,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Dry = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageDry`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiRepeat />
@@ -423,7 +423,7 @@ writeUserAudit(user);`}</code>
                     without coupling concepts that only happen to look similar.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

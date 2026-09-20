@@ -129,10 +129,6 @@ samp {
     background: var(--scrollbar-thumb-color);
 }
 
-*::-webkit-scrollbar-thumb:hover {
-    background: var(--scrollbar-thumb-hover-color);
-}
-
 :focus-visible {
     outline: 2px solid var(--text-color);
     outline-offset: 3px;

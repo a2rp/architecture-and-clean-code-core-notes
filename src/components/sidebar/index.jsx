@@ -12,7 +12,7 @@ import {
 
 import { navigationGroups } from "../../data/navigation";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const THEME_STORAGE_KEY = "architecture-clean-code-theme";
 
@@ -118,7 +118,7 @@ const Sidebar = ({ onNavigate = () => {} }) => {
     };
 
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} sidebarRoot`}>
             <div className="top">
                 <NavLink
                     className="brand"
@@ -296,7 +296,7 @@ const Sidebar = ({ onNavigate = () => {} }) => {
                     </a>
                 </p>
             </div>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

@@ -1,9 +1,8 @@
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Loader = () => {
     return (
-        <Styled.Wrapper
-            role="status"
+        <div className={`${styles.scope} loaderRoot`} role="status"
             aria-live="polite"
             aria-label="Loading page"
         >
@@ -14,7 +13,7 @@ const Loader = () => {
             </div>
 
             <p>Loading notes...</p>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

@@ -5,7 +5,7 @@ import Layout from "./components/layout";
 import Loader from "./components/loader";
 import Sidebar from "./components/sidebar";
 
-import * as Styled from "./App.styled";
+import styles from "./styles.module.css";
 
 const Home = lazy(() => import("./pages/home"));
 
@@ -69,7 +69,7 @@ const MaintainabilityChecklist = lazy(
 
 const App = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} appRoot`}>
             <Layout sidebar={<Sidebar />}>
                 <Suspense fallback={<Loader />}>
                     <Routes>
@@ -172,7 +172,7 @@ const App = () => {
                     </Routes>
                 </Suspense>
             </Layout>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

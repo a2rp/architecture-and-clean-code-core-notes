@@ -7,7 +7,7 @@ import {
     FiTarget,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const principles = [
     {
@@ -44,7 +44,7 @@ const principles = [
 
 const DesignPrinciples = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageDesignPrinciples`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiLayers />
@@ -298,7 +298,7 @@ const DesignPrinciples = () => {
                     controlled.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

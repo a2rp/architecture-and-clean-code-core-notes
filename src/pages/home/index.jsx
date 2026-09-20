@@ -11,7 +11,7 @@ import {
     FiTool,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const topics = [
     {
@@ -66,7 +66,7 @@ const topics = [
 
 const About = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageHome`}>
             <section className="intro">
                 <div className="label">
                     <FiLayers />
@@ -243,7 +243,7 @@ const About = () => {
                     <FiArrowRight />
                 </Link>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

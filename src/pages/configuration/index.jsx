@@ -10,11 +10,11 @@ import {
     FiSliders,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Configuration = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageConfiguration`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiSettings />
@@ -821,7 +821,7 @@ app.listen(config.port);`}</code>
                     than mysterious.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

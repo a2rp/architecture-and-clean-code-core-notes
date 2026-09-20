@@ -7,11 +7,11 @@ import {
     FiZap,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Kiss = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageKiss`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiCheckCircle />
@@ -429,7 +429,7 @@ class RegularDiscountStrategy {
                     indirection while preserving correctness and clarity.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

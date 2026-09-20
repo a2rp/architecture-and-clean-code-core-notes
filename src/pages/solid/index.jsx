@@ -7,7 +7,7 @@ import {
     FiTarget,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const principles = [
     {
@@ -49,7 +49,7 @@ const principles = [
 
 const Solid = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageSolid`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiCheckCircle />
@@ -403,7 +403,7 @@ interface Eatable {
                     and maintain.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 

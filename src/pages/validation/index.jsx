@@ -8,11 +8,11 @@ import {
     FiTarget,
 } from "react-icons/fi";
 
-import * as Styled from "./styled";
+import styles from "./styles.module.css";
 
 const Validation = () => {
     return (
-        <Styled.Wrapper>
+        <div className={`${styles.scope} pageValidation`}>
             <header className="pageHeader">
                 <div className="label">
                     <FiShield />
@@ -757,7 +757,7 @@ const apiUrl = process.env.API_URL;`}</code>
                     correct their input.
                 </p>
             </section>
-        </Styled.Wrapper>
+        </div>
     );
 };
 
