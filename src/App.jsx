@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 
 import Layout from "./components/layout";
 import Loader from "./components/loader";
@@ -68,10 +68,12 @@ const MaintainabilityChecklist = lazy(
 );
 
 const App = () => {
+    const location = useLocation();
+
     return (
         <div className={`${styles.scope} appRoot`}>
             <Layout sidebar={<Sidebar />}>
-                <Suspense fallback={<Loader />}>
+                <Suspense key={location.pathname} fallback={<Loader />}>
                     <Routes>
                         <Route path="/" element={<Home />} />
 
