@@ -2,7 +2,7 @@
 
 An interactive React reference for software architecture, clean code, design principles, code quality, scalability, testing, and maintainability.
 
-![Architecture and Clean Code preview](screenshot.png)
+![Architecture and Clean Code Core Notes screenshot](./screenshot.jpg)
 
 ## Features
 
